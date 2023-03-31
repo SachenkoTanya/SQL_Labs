@@ -16,7 +16,7 @@ FROM cities
 ORDER BY population 
 LIMIT 50;
 
-SELECT Concat(name, ':  ', round((population/ 40000000) * 100, 2))
+SELECT Concat(name, ':  ', round((population/ 40000000) * 100, 2), '%')
 FROM cities
 WHERE round((population / 40000000) * 100, 2) >= 0.1
 ORDER BY population;
