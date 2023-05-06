@@ -37,8 +37,9 @@ CREATE TABLE `valuation` (
   `id` int(50) unsigned NOT NULL AUTO_INCREMENT,
   `comment` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mark` int(1) unsigned DEFAULT NULL,
-  `user_id` int(50) unsigned NOT NULL,
+  `user_id` int(50) unsigned DEFAULT NULL,
   `news_id` int(50) unsigned NOT NULL,
+  `ip` int(4) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `news_id` (`news_id`),
@@ -46,9 +47,9 @@ CREATE TABLE `valuation` (
   CONSTRAINT `valuation_ibfk_2` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `valuation` (`id`, `comment`, `mark`, `user_id`, `news_id`) VALUES
-(1,	'Cool!!!!!!!!!!!!!!',	5,	1,	1),
-(2,	'Not Bad',	4,	2,	2),
-(3,	'Amazing! ',	5,	3,	3);
+INSERT INTO `valuation` (`id`, `comment`, `mark`, `user_id`, `news_id`, `ip`) VALUES
+(1,	'Cool!!!!!!!!!!!!!!',	5,	1,	1,	1235),
+(2,	'Not Bad',	4,	2,	2,	6439),
+(3,	'Amazing! ',	5,	3,	3,	7412);
 
--- 2023-05-05 06:52:38
+-- 2023-05-06 06:00:41
